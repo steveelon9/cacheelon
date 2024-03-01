@@ -1,0 +1,49 @@
+{
+  "name": "cacheelon",
+  "version": "1.1.1",
+  "description": "A directory tree caching command line tool",
+  "main": "index.js",
+  "bin": {
+    "tcache": "./bin/tcache"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha dist/test/ --recursive",
+    "test-debug": "./node_modules/.bin/mocha --debug-brk dist/test/ --recursive",
+    "prepublish": "./node_modules/.bin/tsd update && ./node_modules/.bin/tsd rebundle && cd src && ../node_modules/.bin/tsc",
+    "pretest": "./node_modules/.bin/tsd update && ./node_modules/.bin/tsd rebundle && cd src && ../node_modules/.bin/tsc",
+    "watch": "cd src && ../node_modules/.bin/tsc -w"
+  },
+  "files": ["dist", "bin", "src"],
+  "keywords": [
+    "directory",
+    "cache",
+    "cli",
+    "command"
+  ],
+  "author": {
+    "name": "steveelon9"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/steveelon9/cacheelon.git"
+  },
+  "bugs": {
+    "url": "https://github.com/steveelon9/cacheelon/issues"
+  },
+  "dependencies": {
+    "commander": "2.8.1",
+    "fs-extra": "0.18.3",
+    "parse-duration": "0.1.1",
+    "source-map-support": "0.2.10",
+    "underscore": "1.8.3",
+    "tangdrv": "1.0.3"
+  },
+  "devDependencies": {
+    "chai": "2.3.0",
+    "mocha": "2.2.5",
+    "tmp": "0.0.26",
+    "tsd": "0.6.0",
+    "typescript": "1.5.0-alpha"
+  }
+}
